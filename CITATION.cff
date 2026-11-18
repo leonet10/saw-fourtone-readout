@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "saw-fourtone-readout: ripple-period four-tone phase readout with embedded ML correction for a catalytic SAW hydrogen sensor"
+authors:
+  - family-names: "Perez-Cortes"
+    given-names: "Leonardo"
+    affiliation: "Universidad EAN, Bogotá, Colombia"
+    orcid: "https://orcid.org/0000-0002-0636-0870"
+version: 1.0.0
+date-released: 2026-11-18
+license: MIT
+keywords: [surface acoustic wave, hydrogen sensor, phase detection, AD8302, ESP32, TinyML]
