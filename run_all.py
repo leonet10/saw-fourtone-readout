@@ -27,8 +27,8 @@ if glob.glob(os.path.join(a.data, "*rados*.[Cc][Ss][Vv]")):
     res_lin = sh[:, 0] - np.polyval(slope, T)
     period = 1 / (p[3] * 1e-6)
     k = abs(slope[0]) / 1e3                                              # MHz/C
-    f0s, T0s = np.arange(97.50, 98.501, 0.01), np.arange(25, 60.01, 0.5)
-    S = model.sensitivity_map(P, f, -k, f0s, T0s)
+    f0s, T0s = np.arange(97.50, 98.501, 0.01), np.arange(30, 60.01, 0.5)    # solo el rango medido
+    S = model.sensitivity_map(P, f, k, f0s, T0s)                       # la curva baja en frecuencia al calentar: phi_T(f) = phi_30(f + k (T - 30))
     centers = np.arange(97.55, 98.46, 0.03) * 1e6
     spread = {K: model.measured_tone_spread(Pa, T, f, K, period, centers) for K in (1, 4, 8)}
     R["measured"] = dict(rms_line_deg=rms_line, rms_echo_deg=rms_echo, params=list(map(float, p)),
